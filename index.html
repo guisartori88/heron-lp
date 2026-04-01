@@ -249,6 +249,117 @@
         flex: 0 0 42%;
       }
     }
+
+    /* ========== QUEBRA DE CRENCA ========== */
+    .beliefs {
+      background: var(--bg-primary);
+    }
+
+    .beliefs__headline {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .beliefs__myths {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .beliefs__myth-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      font-size: 18px;
+      color: var(--text-primary);
+    }
+
+    .beliefs__myth-icon {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 40px;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .beliefs__transition {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 32px;
+      color: var(--text-primary);
+    }
+
+    .beliefs__sub-label {
+      font-size: 18px;
+      color: var(--text-secondary);
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .beliefs__reasons {
+      list-style: none;
+      max-width: 500px;
+      margin: 0 auto 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .beliefs__reasons li {
+      padding-left: 28px;
+      position: relative;
+      font-size: 17px;
+      color: var(--text-secondary);
+    }
+
+    .beliefs__reasons li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .beliefs__closing {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .beliefs__closing-highlight {
+      font-size: 42px;
+      display: block;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 767px) {
+      .beliefs__headline {
+        font-size: 26px;
+      }
+
+      .beliefs__myths {
+        grid-template-columns: 1fr;
+      }
+
+      .beliefs__closing {
+        font-size: 26px;
+      }
+
+      .beliefs__closing-highlight {
+        font-size: 32px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -274,6 +385,40 @@
         <div class="hero__photo">
           <img src="foto_fundo.png" alt="Fundador da Heron" width="600" height="400">
         </div>
+      </div>
+    </section>
+    <section class="beliefs" aria-label="Quebra de crenca">
+      <div class="container">
+        <h2 class="beliefs__headline">
+          <em>Voce ja deve ter ouvido:</em>
+        </h2>
+        <div class="beliefs__myths">
+          <div class="beliefs__myth-card">
+            <span class="beliefs__myth-icon">&ldquo;</span>
+            <p>Tem que aparecer todos os dias</p>
+          </div>
+          <div class="beliefs__myth-card">
+            <span class="beliefs__myth-icon">&ldquo;</span>
+            <p>Tem que gravar stories o tempo inteiro</p>
+          </div>
+          <div class="beliefs__myth-card">
+            <span class="beliefs__myth-icon">&ldquo;</span>
+            <p>Sem isso, voce nao cresce</p>
+          </div>
+        </div>
+        <p class="beliefs__transition">
+          Mas na pratica, <span class="accent">isso nao funciona para todas.</span>
+        </p>
+        <p class="beliefs__sub-label">Principalmente para quem:</p>
+        <ul class="beliefs__reasons">
+          <li>Tem rotina clinica intensa</li>
+          <li>Cuida da equipe e do financeiro</li>
+          <li>Ja tentou postar e nao teve retorno real</li>
+        </ul>
+        <p class="beliefs__closing">
+          O problema nao e voce.<br>
+          <span class="accent beliefs__closing-highlight">E a estrategia.</span>
+        </p>
       </div>
     </section>
   </main>
