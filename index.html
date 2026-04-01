@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heron</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #000000;
+      --bg-secondary: #021522;
+      --accent: #EDCA65;
+      --accent-dark: #B3832F;
+      --text-primary: #F0ECE1;
+      --text-secondary: #B3A9A5;
+      --card-border: rgba(179, 169, 165, 0.9);
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --gradient-gold: linear-gradient(180deg, #EDCA65 0%, #B3832F 100%);
+      --font-heading: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+      --max-width: 1140px;
+      --section-padding: 80px 24px;
+      --section-padding-mobile: 48px 16px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .accent {
+      color: var(--accent);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: var(--gradient-gold);
+      color: #000000;
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 18px;
+      padding: 16px 40px;
+      border-radius: 40px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(237, 202, 101, 0.3);
+    }
+
+    .cta-button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .cta-button--inverted {
+      background: #000000;
+      color: var(--text-primary);
+    }
+
+    .cta-button--inverted:hover {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    section {
+      padding: var(--section-padding);
+    }
+
+    @media (max-width: 767px) {
+      section {
+        padding: var(--section-padding-mobile);
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+  </main>
+</body>
+</html>
