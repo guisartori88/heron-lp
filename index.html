@@ -105,10 +105,177 @@
         padding: var(--section-padding-mobile);
       }
     }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: var(--bg-primary);
+      padding: 40px 24px;
+      overflow: hidden;
+    }
+
+    .hero__container {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+
+    .hero__copy {
+      flex: 0 0 58%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .hero__logo {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--accent);
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    .hero__headline {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+
+    .hero__subtitle {
+      font-size: 18px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    .hero__attention {
+      border-left: 4px solid var(--accent);
+      background: var(--card-bg);
+      padding: 16px 20px;
+      font-size: 16px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .hero__attention strong {
+      color: var(--accent);
+    }
+
+    .hero__photo {
+      flex: 0 0 40%;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      max-height: 80vh;
+    }
+
+    .hero__photo img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      object-position: top center;
+      mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        transparent 100%
+      );
+      mask-composite: intersect;
+      -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 15%,
+        black 85%,
+        transparent 100%
+      ),
+      linear-gradient(
+        to bottom,
+        black 0%,
+        black 70%,
+        transparent 100%
+      );
+      -webkit-mask-composite: source-in;
+    }
+
+    @media (max-width: 767px) {
+      .hero {
+        min-height: auto;
+        padding: 32px 16px 48px;
+      }
+
+      .hero__container {
+        flex-direction: column;
+        gap: 32px;
+      }
+
+      .hero__copy {
+        flex: none;
+        width: 100%;
+      }
+
+      .hero__headline {
+        font-size: 32px;
+      }
+
+      .hero__photo {
+        flex: none;
+        width: 100%;
+        max-height: 50vh;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .hero__headline {
+        font-size: 38px;
+      }
+
+      .hero__copy {
+        flex: 0 0 55%;
+      }
+
+      .hero__photo {
+        flex: 0 0 42%;
+      }
+    }
   </style>
 </head>
 <body>
   <main>
+    <section class="hero" aria-label="Apresentacao">
+      <div class="container hero__container">
+        <div class="hero__copy">
+          <span class="hero__logo">HERON</span>
+          <h1 class="hero__headline">
+            Tenha mais pacientes <span class="accent">sem precisar aparecer</span> tanto como dizem.
+          </h1>
+          <p class="hero__subtitle">
+            Existe uma forma mais estrategica de atrair pacientes qualificados, sem depender de postar todos os dias ou viver nos stories.
+          </p>
+          <p class="hero__subtitle">
+            Se voce e medica e quer previsibilidade sem virar refem do Instagram, isso e para voce.
+          </p>
+          <div class="hero__attention">
+            <strong>Mas atencao:</strong> Trabalhamos com um processo seletivo. Nem todas as clinicas sao aprovadas.
+          </div>
+          <a href="#" class="cta-button">Quero ser avaliada</a>
+        </div>
+        <div class="hero__photo">
+          <img src="foto_fundo.png" alt="Fundador da Heron" width="600" height="400">
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
