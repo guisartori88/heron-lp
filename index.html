@@ -430,6 +430,82 @@
         font-size: 18px;
       }
     }
+
+    /* ========== TRIAGEM ========== */
+    .screening {
+      background: var(--bg-primary);
+      border-top: 1px solid rgba(237, 202, 101, 0.15);
+    }
+
+    .screening__headline {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 32px;
+      color: var(--text-primary);
+    }
+
+    .screening__explanation {
+      text-align: center;
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .screening__benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .screening__benefit {
+      background: linear-gradient(180deg, rgba(2, 21, 34, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .screening__benefit-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+    }
+
+    .screening__benefit h3 {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.3;
+    }
+
+    .screening__closing {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 600;
+      text-align: center;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 767px) {
+      .screening__headline {
+        font-size: 26px;
+      }
+
+      .screening__benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .screening__closing {
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -520,6 +596,48 @@
         <p class="positioning__impact">
           <em>Sem isso, voce so atrai curiosos.<br>
           Ou pior: gente que pergunta preco e some.</em>
+        </p>
+      </div>
+    </section>
+    <section class="screening" aria-label="Triagem">
+      <div class="container">
+        <h2 class="screening__headline">
+          Aqui, nos nao trabalhamos com volume.<br>
+          Trabalhamos com <span class="accent">QUALIDADE.</span>
+        </h2>
+        <div class="screening__explanation">
+          <p>Antes de chegar ate voce, o paciente passa por um processo de triagem.</p>
+          <p>Isso significa:</p>
+        </div>
+        <div class="screening__benefits">
+          <div class="screening__benefit">
+            <svg class="screening__benefit-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20 4v14M14 12l6 6 6-6M8 22v10a2 2 0 002 2h20a2 2 0 002-2V22" stroke="url(#gold-grad-3)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="gold-grad-3" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#EDCA65"/><stop offset="1" stop-color="#B3832F"/></linearGradient></defs>
+            </svg>
+            <h3>Menos tempo perdido no WhatsApp</h3>
+          </div>
+          <div class="screening__benefit">
+            <svg class="screening__benefit-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M34 6L16 24l-6-6" stroke="url(#gold-grad-4)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M34 20v12a2 2 0 01-2 2H8a2 2 0 01-2-2V8a2 2 0 012-2h16" stroke="url(#gold-grad-4)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="gold-grad-4" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#EDCA65"/><stop offset="1" stop-color="#B3832F"/></linearGradient></defs>
+            </svg>
+            <h3>Conversas mais qualificadas</h3>
+          </div>
+          <div class="screening__benefit">
+            <svg class="screening__benefit-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="6" y="6" width="28" height="28" rx="4" stroke="url(#gold-grad-5)" stroke-width="2.5"/>
+              <path d="M6 16h28M16 6v28" stroke="url(#gold-grad-5)" stroke-width="2.5"/>
+              <circle cx="28" cy="28" r="3" fill="#EDCA65"/>
+              <defs><linearGradient id="gold-grad-5" x1="0" y1="0" x2="40" y2="40"><stop stop-color="#EDCA65"/><stop offset="1" stop-color="#B3832F"/></linearGradient></defs>
+            </svg>
+            <h3>Maior chance de agendamento</h3>
+          </div>
+        </div>
+        <p class="screening__closing">
+          Voce deixa de atender curiosos...<br>
+          <span class="accent">e comeca a falar com quem ja tem real interesse.</span>
         </p>
       </div>
     </section>
