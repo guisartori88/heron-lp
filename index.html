@@ -614,6 +614,63 @@
         padding: 16px 32px;
       }
     }
+
+    /* ========== MICRO COPY FINAL ========== */
+    .closing {
+      background: var(--bg-primary);
+      padding: 80px 24px;
+    }
+
+    .closing__container {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .closing__line {
+      font-size: 22px;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .closing__final {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin-top: 24px;
+      max-width: 600px;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--bg-primary);
+      border-top: 1px solid rgba(179, 169, 165, 0.2);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 767px) {
+      .closing {
+        padding: 48px 16px;
+      }
+
+      .closing__line {
+        font-size: 18px;
+      }
+
+      .closing__final {
+        font-size: 22px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -783,6 +840,21 @@
         <a href="#" class="cta-button cta-button--inverted">Quero ser avaliada</a>
       </div>
     </section>
+    <section class="closing" aria-label="Fechamento">
+      <div class="container closing__container">
+        <p class="closing__line"><span class="accent">Sem</span> exposicao excessiva.</p>
+        <p class="closing__line"><span class="accent">Sem</span> depender de sorte.</p>
+        <p class="closing__line"><span class="accent">Sem</span> lotar seu WhatsApp de curiosos.</p>
+        <p class="closing__final">
+          Apenas estrategia, posicionamento e pacientes mais preparados para fechar.
+        </p>
+      </div>
+    </section>
   </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Heron. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>
