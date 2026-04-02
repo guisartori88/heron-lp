@@ -575,6 +575,45 @@
         font-size: 26px;
       }
     }
+
+    /* ========== CTA ESCASSEZ ========== */
+    .cta-scarcity {
+      background: var(--gradient-gold);
+      padding: 64px 24px;
+    }
+
+    .cta-scarcity__container {
+      text-align: center;
+    }
+
+    .cta-scarcity__text {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: #000000;
+      line-height: 1.4;
+      margin-bottom: 32px;
+    }
+
+    .cta-scarcity .cta-button--inverted {
+      font-size: 20px;
+      padding: 18px 48px;
+    }
+
+    @media (max-width: 767px) {
+      .cta-scarcity {
+        padding: 48px 16px;
+      }
+
+      .cta-scarcity__text {
+        font-size: 22px;
+      }
+
+      .cta-scarcity .cta-button--inverted {
+        font-size: 18px;
+        padding: 16px 32px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -733,6 +772,15 @@
             <li>Quer apenas "mais seguidores"</li>
           </ul>
         </div>
+      </div>
+    </section>
+    <section class="cta-scarcity" aria-label="Chamada para acao">
+      <div class="container cta-scarcity__container">
+        <p class="cta-scarcity__text">
+          Nos nao atendemos todos, para manter o nivel de acompanhamento.<br>
+          Por isso, o primeiro passo e simples:
+        </p>
+        <a href="#" class="cta-button cta-button--inverted">Quero ser avaliada</a>
       </div>
     </section>
   </main>
