@@ -506,6 +506,75 @@
         font-size: 22px;
       }
     }
+
+    /* ========== PARA QUEM E / NAO E ========== */
+    .audience {
+      background: var(--bg-secondary);
+    }
+
+    .audience__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .audience__headline {
+      font-family: var(--font-heading);
+      font-size: 30px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+      line-height: 1.3;
+    }
+
+    .audience__list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .audience__list li {
+      padding-left: 32px;
+      position: relative;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .audience__list--positive li {
+      color: var(--text-primary);
+    }
+
+    .audience__list--positive li::before {
+      content: "\2714";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .audience__list--negative li {
+      color: var(--text-secondary);
+    }
+
+    .audience__list--negative li::before {
+      content: "\2716";
+      position: absolute;
+      left: 0;
+      color: rgba(237, 202, 101, 0.4);
+      font-size: 16px;
+    }
+
+    @media (max-width: 767px) {
+      .audience__container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .audience__headline {
+        font-size: 26px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -639,6 +708,31 @@
           Voce deixa de atender curiosos...<br>
           <span class="accent">e comeca a falar com quem ja tem real interesse.</span>
         </p>
+      </div>
+    </section>
+    <section class="audience" aria-label="Para quem e e nao e">
+      <div class="container audience__container">
+        <div class="audience__for">
+          <h2 class="audience__headline">
+            Essa estrategia e <span class="accent"><em>para medicas que:</em></span>
+          </h2>
+          <ul class="audience__list audience__list--positive">
+            <li>Ja atendem no particular</li>
+            <li>Querem aumentar o valor percebido</li>
+            <li>Estao cansadas de depender de indicacao</li>
+            <li>Querem mais previsibilidade de agenda</li>
+          </ul>
+        </div>
+        <div class="audience__not-for">
+          <h2 class="audience__headline">
+            Nao e para voce se:
+          </h2>
+          <ul class="audience__list audience__list--negative">
+            <li>Busca resultado rapido sem estrutura</li>
+            <li>Nao tem equipe ou disponibilidade minima para atender</li>
+            <li>Quer apenas "mais seguidores"</li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
