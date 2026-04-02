@@ -360,6 +360,76 @@
         font-size: 32px;
       }
     }
+
+    /* ========== POSICIONAMENTO ========== */
+    .positioning {
+      background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    }
+
+    .positioning__headline {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.3;
+      margin-bottom: 48px;
+      color: var(--text-primary);
+    }
+
+    .positioning__cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .positioning__card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .positioning__icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+    }
+
+    .positioning__card h3 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .positioning__card p {
+      font-size: 16px;
+      color: var(--text-secondary);
+    }
+
+    .positioning__impact {
+      font-size: 22px;
+      text-align: center;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 767px) {
+      .positioning__headline {
+        font-size: 26px;
+      }
+
+      .positioning__cards {
+        grid-template-columns: 1fr;
+      }
+
+      .positioning__impact {
+        font-size: 18px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -418,6 +488,38 @@
         <p class="beliefs__closing">
           O problema nao e voce.<br>
           <span class="accent beliefs__closing-highlight">E a estrategia.</span>
+        </p>
+      </div>
+    </section>
+    <section class="positioning" aria-label="Posicionamento">
+      <div class="container">
+        <h2 class="positioning__headline">
+          Mais pacientes nao vem de quem aparece mais.<br>
+          <span class="accent">Vem de quem aparece da forma certa.</span>
+        </h2>
+        <div class="positioning__cards">
+          <div class="positioning__card">
+            <svg class="positioning__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" stroke="url(#gold-grad-1)" stroke-width="2"/>
+              <path d="M16 24l6 6 10-12" stroke="url(#gold-grad-1)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs><linearGradient id="gold-grad-1" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#EDCA65"/><stop offset="1" stop-color="#B3832F"/></linearGradient></defs>
+            </svg>
+            <h3>Estrategia de atracao</h3>
+            <p>Atrair quem ja tem perfil e interesse real no seu servico.</p>
+          </div>
+          <div class="positioning__card">
+            <svg class="positioning__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="24" cy="24" r="22" stroke="url(#gold-grad-2)" stroke-width="2"/>
+              <path d="M15 18h18M15 24h12M15 30h16" stroke="url(#gold-grad-2)" stroke-width="2.5" stroke-linecap="round"/>
+              <defs><linearGradient id="gold-grad-2" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#EDCA65"/><stop offset="1" stop-color="#B3832F"/></linearGradient></defs>
+            </svg>
+            <h3>Processo de qualificacao dos leads</h3>
+            <p>Filtrar antes da conversa quem realmente esta pronto para agendar.</p>
+          </div>
+        </div>
+        <p class="positioning__impact">
+          <em>Sem isso, voce so atrai curiosos.<br>
+          Ou pior: gente que pergunta preco e some.</em>
         </p>
       </div>
     </section>
