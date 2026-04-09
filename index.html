@@ -2134,9 +2134,24 @@
         if (backBtn) showStep(currentStep - 1);
       });
 
-      form.addEventListener('submit', (event) => {
+      form.addEventListener('submit', async (event) => {
         event.preventDefault();
+
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx-c6DxpadZp_seZR6FdwqAT7-klTNmp4qD_lj6WVEU2HPDzvbUC84Uk13pQ2E7cdQ_/exec';
+
+        const data = new FormData();
+        data.append('fullName',   form.querySelector('[name="fullName"]').value.trim());
+        data.append('whatsapp',   form.querySelector('[name="whatsapp"]').value.trim());
+        data.append('investment', (form.querySelector('[name="investment"]:checked') || {}).value || '');
+        data.append('urgency',    (form.querySelector('[name="urgency"]:checked') || {}).value || '');
+
         showStep('success');
+
+        try {
+          await fetch(WEB_APP_URL, { method: 'POST', body: data, mode: 'no-cors' });
+        } catch (_) {
+          // falha silenciosa — lead já viu o sucesso
+        }
       });
     })();
   </script>
