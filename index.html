@@ -2005,6 +2005,7 @@
             <p class="form-field__hint">Priorizamos clínicas com maior prontidão para implementação.</p>
             <div class="form-nav">
               <button type="button" class="form-nav__back">Voltar</button>
+              <button type="submit" class="form-nav__submit" disabled>Enviar</button>
             </div>
           </fieldset>
 
@@ -2077,6 +2078,14 @@
         updateNextButton();
       };
 
+      const isValidPhone = (value) => {
+        const digits = value.replace(/\D/g, '');
+        if (digits.length < 10 || digits.length > 11) return false;
+        if (/^(\d)\1+$/.test(digits)) return false; // todos os dígitos iguais
+        const ddd = Number(digits.slice(0, 2));
+        return ddd >= 11 && ddd <= 99;
+      };
+
       const updateNextButton = () => {
         if (currentStep === 'success') return;
         const stepEl = overlay.querySelector(`.form-step[data-step="${currentStep}"]`);
@@ -2086,7 +2095,15 @@
         if (currentStep === 1) {
           const name = form.fullName.value.trim();
           const phone = form.whatsapp.value.trim();
-          actionBtn.disabled = !name || !phone;
+          const phoneValid = isValidPhone(phone);
+          const phoneHint = stepEl.querySelector('.form-field__hint');
+          if (phoneHint) {
+            phoneHint.textContent = phone.length > 0 && !phoneValid
+              ? 'Número inválido — informe o DDD + 9 dígitos (ex: (11) 99999-9999)'
+              : 'Nossa equipe utiliza esse número para retornar após a análise.';
+            phoneHint.style.color = phone.length > 0 && !phoneValid ? '#e05' : '';
+          }
+          actionBtn.disabled = !name || !phoneValid;
         } else {
           const radioName = currentStep === 2 ? 'investment' : 'urgency';
           actionBtn.disabled = !form.querySelector(`input[name="${radioName}"]:checked`);
@@ -2116,9 +2133,6 @@
         if (event.target.type !== 'radio') return;
         setTimeout(() => {
           if (currentStep === 2) showStep(3);
-          if (currentStep === 3) {
-            form.dispatchEvent(new Event('submit', { cancelable: true }));
-          }
         }, 300);
       });
 
