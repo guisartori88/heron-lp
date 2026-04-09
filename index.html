@@ -2139,16 +2139,23 @@
 
         const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbx-c6DxpadZp_seZR6FdwqAT7-klTNmp4qD_lj6WVEU2HPDzvbUC84Uk13pQ2E7cdQ_/exec';
 
-        const data = new FormData();
-        data.append('fullName',   form.querySelector('[name="fullName"]').value.trim());
-        data.append('whatsapp',   form.querySelector('[name="whatsapp"]').value.trim());
-        data.append('investment', (form.querySelector('[name="investment"]:checked') || {}).value || '');
-        data.append('urgency',    (form.querySelector('[name="urgency"]:checked') || {}).value || '');
+        const payload = JSON.stringify({
+          token:      'heron_lp_2026',
+          name:       form.querySelector('[name="fullName"]').value.trim(),
+          whatsapp:   form.querySelector('[name="whatsapp"]').value.trim(),
+          investment: (form.querySelector('[name="investment"]:checked') || {}).value || '',
+          urgency:    (form.querySelector('[name="urgency"]:checked') || {}).value || '',
+        });
 
         showStep('success');
 
         try {
-          await fetch(WEB_APP_URL, { method: 'POST', body: data, mode: 'no-cors' });
+          await fetch(WEB_APP_URL, {
+            method: 'POST',
+            body: payload,
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'text/plain' },
+          });
         } catch (_) {
           // falha silenciosa — lead já viu o sucesso
         }
