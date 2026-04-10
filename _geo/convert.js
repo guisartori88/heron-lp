@@ -72,8 +72,8 @@ function centroid(geojson) {
 
 const brPath = geojsonToPath(br);
 
-const states = ['ba', 'es', 'pr', 'sc', 'rs'];
-const labels = { ba: 'BA', es: 'ES', pr: 'PR', sc: 'SC', rs: 'RS' };
+const states = ['ba', 'es', 'pr', 'sc', 'rs', 'mg', 'sp', 'rj', 'mt', 'ms', 'go', 'am'];
+const labels = { ba: 'BA', es: 'ES', pr: 'PR', sc: 'SC', rs: 'RS', mg: 'MG', sp: 'SP', rj: 'RJ', mt: 'MT', ms: 'MS', go: 'GO', am: 'AM' };
 
 let statesSvg = '';
 let dotsSvg = '';
@@ -110,3 +110,9 @@ ${statesSvg}${dotsSvg}${labelsSvg}            </svg>`;
 fs.writeFileSync('./_geo/brazil-map.svg.txt', svg, 'utf8');
 console.log('SVG gerado em _geo/brazil-map.svg.txt');
 console.log(`Bounds: lon [${minLon}, ${maxLon}] lat [${minLat}, ${maxLat}]`);
+console.log('Centroids:');
+for (const st of states) {
+  const geo = JSON.parse(fs.readFileSync(`./_geo/${st}.json`, 'utf8'));
+  const [cx, cy] = centroid(geo);
+  console.log(`  ${labels[st]}: cx=${cx}, cy=${cy}`);
+}
